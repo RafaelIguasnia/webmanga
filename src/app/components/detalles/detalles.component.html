@@ -1,0 +1,14 @@
+<h1>Detalles del Manga</h1>
+
+<div *ngIf="manga; else notFound">
+  <h2>{{ manga.nombre }}</h2>
+  <p><strong>Autor:</strong> {{ manga.autor }}</p>
+  <p><strong>Sinopsis:</strong> {{ manga.sinopsis }}</p>
+  <img [src]="manga.imagen" alt="{{ manga.nombre }}" style="max-width: 300px; height: auto;" />
+</div>
+
+<ng-template #notFound>
+  <p>No se encontraron detalles para este manga.</p>
+</ng-template>
+
+<a [routerLink]="['/']">Volver al Inicio</a>

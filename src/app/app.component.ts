@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common'; // Importa CommonModule para usar *ngFor
+import { RouterModule } from '@angular/router'; // También importa RouterModule si tienes rutas
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  imports: [CommonModule, RouterModule], // Asegúrate de incluir CommonModule aquí
 })
 export class AppComponent {
-  title = 'manga-spa';
+  items = ['Naruto', 'One Piece', 'Bleach']; // Ejemplo de datos
 }
